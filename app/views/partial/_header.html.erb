@@ -1,0 +1,31 @@
+<header>
+  <nav class="header-nav flex wrap">
+    <h1 class="header-nav__logo">
+      <%= link_to image_tag('logo_site.png'), root_path %>
+    </h1>
+    <ul class="header-nav__menu flex">
+    <li>
+      <form action="/" name="search1" method="post">
+	<dl class="header-nav__search-form">
+		<dt class="header-nav__search-form--text"><input type="text" name="search" value="" placeholder="本のタイトル、著者名" /></dt>
+		<dd class="header-nav__search-form--button"><button><span></span></button></dd>
+	</dl>
+</form>
+    </li>
+    <li><%= link_to 'パイログとは', '#', class: 'header-nav__link--white font_bold' %></li>
+    <li><%= link_to '新規会員登録', '#', class: 'header-nav__link--signup font_bold' %></li>
+    <li><%= link_to 'ログイン', '#', class: 'header-nav__link--login font_bold' %></li>
+    </ul>
+  </nav>
+  <nav class="header-nav--bottom wrap">
+    <ul class="header-nav__menu--bottom flex">
+      <li><%= link_to '#', class: 'header-nav__link--bottom current' do %><span class="header-nav__icon--top"></span><span>トップ</span><% end %></end></li>
+      <li><%= link_to '#', class: 'header-nav__link--bottom' do %><span class="header-nav__icon--news"></span><span>新刊ニュース</span><% end %></li>
+      <li><%= link_to '#', class: 'header-nav__link--bottom' do %><span class="header-nav__icon--ranking"></span><span>ランキング</span><% end %></li>
+      <li><%= link_to '#', class: 'header-nav__link--bottom' do %><span class="header-nav__icon--list"></span><span>ブックリスト</span><% end %></li>
+      <li><%= link_to '#', class: 'header-nav__link--bottom' do %><span class="header-nav__icon--chat"></span><span>談話室</span><% end %></li>
+      <li><%= link_to '#', class: 'header-nav__link--bottom' do %><span class="header-nav__icon--communication"></span><span>パイログ通信</span><% end %></li>
+      <li><%= link_to '#', class: 'header-nav__link--bottom' do %><span class="header-nav__icon--support"></span><span>サポート</span><% end %></li>
+    </ul>
+  </nav>
+</header>

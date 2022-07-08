@@ -1,0 +1,119 @@
+@import '_common';
+@import '_mixin';
+
+/* header nav */
+.header-nav{
+  background-color: $main_color;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+.header-nav__logo{
+  width: 10%;
+}
+.header-nav__menu{
+  width: 50%;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
+  font-size: 1.2rem;
+}
+.header-nav__search-form{
+  position:relative;
+	background-color:#fff;
+	border:1px solid #aaa;
+	-webkit-border-radius:6px;
+	-moz-border-radius:6px;
+	-o-border-radius:6px;
+	-ms-border-radius:6px;
+	border-radius:6px;
+}
+.header-nav__search-form--text{
+  margin-right:40px;
+	padding:8px 0 8px 8px;
+  input{
+    width:100%;
+    height:24px;
+    line-height:24px;
+    background:none;
+    border:none;
+  }
+}
+.header-nav__search-form--button{
+  position:absolute;
+	top:0;
+	right:0;
+  button{
+    display:block;
+    padding:10px;
+    background:none;
+    border:none;
+  }
+  span{
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: url("ico_search.png") no-repeat;
+    background-size: contain;
+    background-attachment: scroll;
+    background-position: 0 0;
+    cursor: pointer;
+  }
+}
+.header-nav__link--white{
+  color: #fff;
+}
+.header-nav__link--signup{
+  background-color: #F5B629;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 15px;
+}
+.header-nav__link--login{
+  background-color: #fff;
+  color: $main_color;
+  border-radius: 5px;
+  padding: 10px 15px;
+}
+
+/* header nav bottom */
+.header-nav--bottom{
+  background-color: #F4F4F4;
+}
+.header-nav__menu--bottom{
+  font-size: 1.4rem;
+  gap: 20px;
+}
+.header-nav__icon--top{
+  @include set-background-image('ico_top.png');
+}
+.header-nav__icon--news{
+  @include set-background-image('ico_news.png');
+}
+.header-nav__icon--ranking{
+  @include set-background-image('ico_ranking.png');
+}
+.header-nav__icon--list{
+  @include set-background-image('ico_list.png');
+}
+.header-nav__icon--chat{
+  @include set-background-image('ico_chat.png');
+}
+.header-nav__icon--communication{
+  @include set-background-image('ico_communication.png');
+}
+.header-nav__icon--support{
+  @include set-background-image('ico_support.png');
+}
+.header-nav__link--bottom{
+  &:hover{
+    color: $main_color;
+    font-weight: bold;
+    border-bottom: 2px solid $main_color;
+  }
+  &.current{
+    color: $main_color;
+    font-weight: bold;
+    border-bottom: 2px solid $main_color;
+  }
+}
