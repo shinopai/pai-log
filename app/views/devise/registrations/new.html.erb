@@ -1,0 +1,36 @@
+<!-- header -->
+<%= render 'partial/header' %>
+
+<!-- main -->
+<div class="form__outer">
+  <h2 class="form__heading">パイログの新規登録</h2>
+  <h3 class="form__heading--sub">ようこそ、パイログへ。</h3>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "form__inner"}) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+    <small class="form__text--warning">(<span class="required_mark">&lowast;</span>は必須項目です)</small>
+  <div class="form__item">
+    <%= f.label :email, 'メールアドレス', class: 'form__label' %><span class="required_mark">&lowast;</span><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'メールアドレスを入力', class: 'form__input' %>
+  </div>
+  <div class="form__item">
+    <%= f.label :pailog_id, 'パイログID', class: 'form__label' %><span class="required_mark">&lowast;</span><br />
+    <%= f.text_field :pailog_id, autofocus: true, autocomplete: "pailog_id", placeholder: 'パイログIDを作成', class: 'form__input' %>
+  </div>
+  <div class="form__item">
+    <%= f.label :password, 'パスワード', class: 'form__label' %><span class="required_mark">&lowast;</span><br>
+    <%= f.password_field :password, autocomplete: "new-password", placeholder: 'パスワードを作成', class: 'form__input' %>
+  </div>
+
+  <div class="form__item">
+    <%= f.label :password_confirmation, 'パスワード確認', class: 'form__label' %><span class="required_mark">&lowast;</span><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form__input' %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "登録", class: 'form__button--signup' %>
+  </div>
+    <% end %>
+</div>
+
+<!-- footer -->
+<%= render 'partial/footer' %>

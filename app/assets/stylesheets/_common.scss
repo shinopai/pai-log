@@ -1,5 +1,6 @@
 /* variable */
-$main_color: #4EA6CC;
+$main_color: #4EA6CC;  //サイトメインカラー
+$main_color_thin: #8AD8FF; // サイトメインカラー薄目
 
 /* reset style */
 *{
@@ -32,4 +33,27 @@ a{
 }
 .font_bold{
   font-weight: bold;
+}
+.section_heading{
+  font-size: 2.4rem;
+  font-weight: bold;
+  color: #333;
+  width: fit-content;
+}
+.section_separation{
+  border-top: 1px solid #8c8b8b;
+}
+.notice_message{
+  background-color: #b6e355;
+  color: #fff;
+  text-align: center;
+  font-size: 1.6rem;
+  padding: 10px;
+}
+.alert_message{
+  background-color: #e38055;
+  color: #fff;
+  text-align: center;
+  font-size: 1.6rem;
+  padding: 10px;
 }

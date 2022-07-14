@@ -1,0 +1,75 @@
+<footer>
+  <% if check_controller(controller.controller_name) %>
+  <div class="footer__outer wrap">
+    <div class="footer__flex-wrap flex">
+      <div class="footer__flex-item">
+        <dl>
+          <dt class="footer__menu-title font_bold">本と出会う</dt>
+          <dd><a href="/ranking">ランキング</a></dd>
+          <dd><a href="/release">新刊情報</a></dd>
+          <dd><a href="/review">新着レビュー</a></dd>
+          <dd><a href="/questions/all">ブクログ談話室</a></dd>
+          <dd><a href="/award/">ブクログ大賞</a></dd>
+          <dd><a href="/hon" target="_blank">ブクログ通信</a></dd>
+          <dd><a href="/reading">読書のすすめ</a></dd>
+        </dl>
+      </div>
+      <div class="footer__flex-item">
+        <dl>
+          <dt class="footer__menu-title font_bold">本を探す</dt>
+          <dd><a href="/ranking">キーワードで検索</a></dd>
+          <dd class="interval_10"><a href="/release">タグから検索</a></dd>
+          <dt class="footer__menu-title font_bold"><a href="/review">本棚を探す</a></dt>
+          <dd><a href="/questions/all">プロフィールから本棚を探す</a></dd>
+          <dd><a href="/award/">ブクログID 検索</a></dd>
+          <dd><a href="/hon" target="_blank">Best User Award 2021</a></dd>
+        </dl>
+      </div>
+      <div class="footer__flex-item">
+        <dl>
+          <dt class="footer__menu-title font_bold">ようこそパイログへ</dt>
+          <dd class="interval_10"><a href="/ranking">パイログについて</a></dd>
+          <dt class="footer__menu-title font_bold">パイログ</dt>
+          <dd><a href="/review">パイログのアプリ</a></dd>
+        </dl>
+      </div>
+      <div class="footer__flex-item">
+        <dl>
+          <dt class="footer__menu-title font_bold">サポート</dt>
+          <dd><a href="/ranking">お知らせ</a></dd>
+          <dd><a href="/release">ヘルプセンター</a></dd>
+          <dd><a href="/review">お問い合わせ</a></dd>
+          <dd><a href="/questions/all">ヘルプセンター</a></dd>
+          <dd><a href="/award/">広告掲載について</a></dd>
+          <dd><a href="/hon" target="_blank">公式Twitter</a></dd>
+          <dd><a href="/reading">Facebookページ</a></dd>
+        </dl>
+      </div>
+    </div>
+    <div class="footer__flex-wrap--bottom flex">
+      <ul class="footer__flex-item--before flex">
+        <li>利用規約</li>
+        <li>Cookieの使用について</li>
+        <li>会社概要</li>
+        <li>プライバシーポリシー</li>
+      </ul>
+      <div class="footer__flex-item--after">
+        <small>Copyright © 2022 Pailog,Inc. All Rights Reserved.</small>
+      </div>
+    </div>
+  </div>
+  <% else %>
+  <div class="footer__outer--different wrap">
+    <ul class="footer__flex-wrap--different flex">
+      <li>パイログ</li>
+      <li>新規登録</li>
+      <li>パイログについて</li>
+      <li>お知らせ</li>
+      <li>利用規約</li>
+      <li>プライバシーポリシー</li>
+      <li>お問い合わせ</li>
+    </ul>
+    <small class="footer__text--copyrights">Copyright © 2022 Pailog,Inc. All Rights Reserved.</small>
+   </div>
+  <% end %>
+</footer>

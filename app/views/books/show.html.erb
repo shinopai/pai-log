@@ -1,0 +1,37 @@
+<!-- header -->
+<%= render 'partial/header' %>
+
+<!-- main -->
+<main>
+  <!-- item detail -->
+  <section class="item-detail-section wrap">
+    <div class="item-detail__flex-wrap flex">
+      <figure class="item-detail__flex-item--before">
+        <%= image_tag @item['items'][0]['volumeInfo']['imageLinks']['thumbnail'] %>
+      </figure>
+      <div class="item-detail__flex-item--after">
+      <h2 class="item-detail__title"><%= @item['items'][0]['volumeInfo']['title'] %></h2>
+      <p class="item-detail__author">著者:&nbsp;<%= @item['items'][0]['volumeInfo']['authors'][0] %></p>
+      <p class="item-detail__publish-date"><%= @item['items'][1]['volumeInfo']['publisher'] %><span>(<%= l @item['items'][1]['volumeInfo']['publishedDate'].to_date, format: :custom %>発売)</span></p>
+      <div class="item-detail__description font_bold">
+      <h2 class="item-detail__description-title">作品紹介・あらすじ</h2>
+      <p>
+        <%= @item['items'][1]['volumeInfo']['description'] %>
+      </p>
+      </div>
+        <% if user_signed_in? %>
+        <% if is_registered(current_user.id, @item['items'][0]['id']) %>
+        <%= link_to '本棚に登録済み', user_profile_path(current_user), class: 'link-registered' %>
+        <% else %>
+        <%= button_to '登録する', book_add_item_path(current_user, book_id: @item['items'][0]['id']), class: 'basic-button--add-item' %>
+        <% end %>
+        <% else %>
+        <%= link_to '本を登録するためログインする', new_user_session_path, class: 'link' %>
+        <% end %>
+      </div>
+      </div>
+  </section>
+</main>
+
+<!-- footer -->
+<%= render 'partial/footer' %>

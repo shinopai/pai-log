@@ -5,12 +5,21 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+
+    <!-- style -->
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+
+    <!-- swiper -->
+    <%= stylesheet_link_tag "https://unpkg.com/swiper/swiper-bundle.css" %>
+
+    <!-- script -->
     <%= javascript_importmap_tags %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
 
   </head>
   <body>
     <%= yield %>
+
+    <%= javascript_include_tag "https://unpkg.com/swiper/swiper-bundle.min.js" %>
   </body>
 </html>

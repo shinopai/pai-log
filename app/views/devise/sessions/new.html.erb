@@ -1,0 +1,26 @@
+<!-- header -->
+<%= render 'partial/header' %>
+
+<!-- main -->
+<div class="form__outer">
+  <h2 class="form__heading">ログイン</h2>
+  <p class="form__text">ブクログに登録している方は、下記からログインしてください。<br>まだ登録していない方は<%= link_to 'こちらから登録', new_user_registration_path %>してください。</p>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "form__inner"}) do |f| %>
+  <div class="form__item">
+    <%= f.label :pailog_id, 'パイログID', class: 'form__label' %><br />
+    <%= f.text_field :pailog_id, autofocus: true, autocomplete: "pailog_id", placeholder: 'パイログIDを入力', class: 'form__input' %>
+  </div>
+  <div class="form__item">
+    <%= f.label :password, 'パスワード', class: 'form__label' %><br />
+    <%= f.text_field :password, autofocus: true, autocomplete: "password", placeholder: 'パスワードを入力', class: 'form__input' %>
+  </div>
+  <div class="actions">
+    <%= f.submit "ログイン", class: 'form__button--login' %>
+  </div>
+  <p class="form__text font_bold">アカウントをお持ちでない方はこちら</p>
+  <%= link_to '新規登録', new_user_registration_path, class: 'form__link--signup' %>
+  <% end %>
+</div>
+
+<!-- footer -->
+<%= render 'partial/footer' %>

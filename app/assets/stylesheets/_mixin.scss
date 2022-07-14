@@ -8,3 +8,67 @@
   vertical-align: -4px;
   margin-right: 5px;
 }
+
+/* basic button to add item */
+@mixin add-item(){
+  background-color: $main_color;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 5px;
+  width: 130px;
+  border: none;
+  cursor: pointer;
+  &::before{
+    content: '';
+    background: url('ico_add-item.png') no-repeat;
+    background-size: cover;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    margin-bottom: -5px;
+  }
+  @content;
+}
+
+/* basic link button */
+@mixin basic-link(){
+  background-color: #FFF1C9;
+  border: 1px solid #dab35b;
+  padding: 10px 15px;
+  display: block;
+  font-size: 1.4rem;
+  border-radius: 5px;
+  width: 130px;
+  text-align: center;
+  cursor: pointer;
+  &:hover{
+    background-color: #dab35b
+  }
+  @content;
+}
+
+/* registered link button */
+@mixin registered-link() {
+  background-color: #89C600;
+  color: #fff;
+  padding: 10px 15px;
+  display: block;
+  font-size: 1.4rem;
+  border-radius: 5px;
+  width: 130px;
+  border: none;
+  text-align: center;
+  cursor: pointer;
+  &::before{
+    content: '';
+    background: url('ico_registered.png') no-repeat;
+    background-size: cover;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    margin-bottom: -5px;
+  }
+  @content;
+}

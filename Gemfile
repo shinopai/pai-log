@@ -83,3 +83,12 @@ gem 'cssbundling-rails'
 
 # search and sort
 gem 'ransack'
+
+# use jquery
+gem 'jquery-rails'
+
+# japanization of rails
+gem 'rails-i18n'
+
+# japanization of devise
+gem 'devise-i18n'

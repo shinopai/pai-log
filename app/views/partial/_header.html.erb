@@ -1,25 +1,32 @@
 <header>
   <nav class="header-nav flex wrap">
-    <h1 class="header-nav__logo">
+    <h1 class="header-nav__logo<%= " center" if !check_controller(controller.controller_name) %>">
       <%= link_to image_tag('logo_site.png'), root_path %>
     </h1>
+    <% if check_controller(controller.controller_name) %>
     <ul class="header-nav__menu flex">
     <li>
-      <form action="/" name="search1" method="post">
+    <%= form_with url: books_search_path, method: :get do %>
 	<dl class="header-nav__search-form">
-		<dt class="header-nav__search-form--text"><input type="text" name="search" value="" placeholder="本のタイトル、著者名" /></dt>
+		<dt class="header-nav__search-form--text"><%= text_field_tag 'search_word', '', placeholder: '本のタイトル、著者名、ISBN' %></dt>
 		<dd class="header-nav__search-form--button"><button><span></span></button></dd>
 	</dl>
-</form>
+<% end %>
     </li>
+    <% if user_signed_in? %>
+    <li><%= link_to current_user.pailog_id, user_profile_path(current_user), class: 'header-nav__link--white font_bold' %></li>
+    <li><%= link_to 'ログアウト', destroy_user_session_path, class: 'header-nav__link--white font_bold' %></li>
+    <% else %>
     <li><%= link_to 'パイログとは', '#', class: 'header-nav__link--white font_bold' %></li>
-    <li><%= link_to '新規会員登録', '#', class: 'header-nav__link--signup font_bold' %></li>
-    <li><%= link_to 'ログイン', '#', class: 'header-nav__link--login font_bold' %></li>
+    <li><%= link_to '新規会員登録', new_user_registration_path, class: 'header-nav__link--signup font_bold' %></li>
+    <li><%= link_to 'ログイン', new_user_session_path, class: 'header-nav__link--login font_bold' %></li>
+    <% end %>
     </ul>
+    <% end %>
   </nav>
+  <% if check_controller(controller.controller_name) %>
   <nav class="header-nav--bottom wrap">
     <ul class="header-nav__menu--bottom flex">
-      <li><%= link_to '#', class: 'header-nav__link--bottom current' do %><span class="header-nav__icon--top"></span><span>トップ</span><% end %></end></li>
       <li><%= link_to '#', class: 'header-nav__link--bottom' do %><span class="header-nav__icon--news"></span><span>新刊ニュース</span><% end %></li>
       <li><%= link_to '#', class: 'header-nav__link--bottom' do %><span class="header-nav__icon--ranking"></span><span>ランキング</span><% end %></li>
       <li><%= link_to '#', class: 'header-nav__link--bottom' do %><span class="header-nav__icon--list"></span><span>ブックリスト</span><% end %></li>
@@ -28,4 +35,12 @@
       <li><%= link_to '#', class: 'header-nav__link--bottom' do %><span class="header-nav__icon--support"></span><span>サポート</span><% end %></li>
     </ul>
   </nav>
+  <% end %>
 </header>
+
+<% if flash[:notice] %>
+ <p class="notice_message font_bold"><%= notice %></p>
+<% end %>
+<% if flash[:alert] %>
+ <p class="alert_message font_bold"><%= alert %></p>
+<% end %>
