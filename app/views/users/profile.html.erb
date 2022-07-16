@@ -1,0 +1,26 @@
+<!-- header -->
+<%= render 'partial/header' %>
+
+<!-- main -->
+<main>
+  <!-- user shelf -->
+  <section class="shelf-section wrap">
+    <h2 class="shelf-section__heading font_bold">
+      <%= @user.pailog_id %>さんの本棚
+    </h2>
+    <div class="shelf-section__shelf-wrap">
+      <div class="shelf-section__shelf-inner flex">
+        <% if @user.shelves.any? %>
+        <% @user.shelves.each do |item| %>
+        <figure>
+          <%= image_tag item.book.image %>
+        </figure>
+        <% end %>
+        <% end %>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- footer -->
+<%= render 'partial/footer' %>

@@ -9,12 +9,20 @@
     <% @result['items'].each do |item| %>
     <div class="search-result__flex-wrap flex">
       <figure class="search-result__flex-item--before">
-        <%= link_to image_tag(item['volumeInfo']['imageLinks']['thumbnail']), book_show_path(title: item['volumeInfo']['title'], author: item['volumeInfo']['authors']) %>
+        <%= link_to image_tag(item['volumeInfo']['imageLinks']['thumbnail']),
+        book_show_path(title: item['volumeInfo']['title'], author:
+        item['volumeInfo']['authors']) %>
       </figure>
       <div class="search-result__flex-item--middle">
-        <%= link_to item['volumeInfo']['title'], book_show_path(title: item['volumeInfo']['title'], author: item['volumeInfo']['authors']), class: 'search-result__title font_bold' %>
-        <p class="search-result__author"><%= item['volumeInfo']['authors'] %></p>
-        <p class="search-result__date"><%= item['volumeInfo']['publishedDate'] %></p>
+        <%= link_to item['volumeInfo']['title'], book_show_path(title:
+        item['volumeInfo']['title'], author: item['volumeInfo']['authors']),
+        class: 'search-result__title font_bold' %>
+        <p class="search-result__author">
+          <%= item['volumeInfo']['authors'] %>
+        </p>
+        <p class="search-result__date">
+          <%= item['volumeInfo']['publishedDate'] %>
+        </p>
       </div>
       <div class="search-result__flex-item--after">
         <%= button_to '登録する', '', class: 'basic-button--add-item' %>
@@ -23,6 +31,5 @@
     <% end %>
   </section>
 </main>
-<%= @result['totalItems'] %>
 <!-- footer -->
 <%= render 'partial/footer' %>

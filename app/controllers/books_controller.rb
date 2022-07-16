@@ -5,6 +5,10 @@ class BooksController < ApplicationController
   BASE_URL = 'https://www.googleapis.com/books/v1/volumes?q='
   BASE_URL.freeze
 
+  def index
+    @total_count = Shelf.count
+  end
+
   def search
     q = URI.encode_www_form(q: params[:search_word])
     search_url = BASE_URL + q

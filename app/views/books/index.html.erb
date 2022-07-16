@@ -5,14 +5,14 @@
 <main>
   <!-- main slider -->
   <!-- Slider main container -->
-<div class="swiper-container">
+  <div class="swiper-container">
     <!-- Additional required wrapper -->
     <div class="swiper-wrapper">
-        <!-- Slides -->
-        <div class="swiper-slide"><%= image_tag 'img_front01.png' %></div>
-        <div class="swiper-slide"><%= image_tag 'img_front02.jpg' %></div>
-        <div class="swiper-slide"><%= image_tag 'img_front03.png' %></div>
-        ...
+      <!-- Slides -->
+      <div class="swiper-slide"><%= image_tag 'img_front01.png' %></div>
+      <div class="swiper-slide"><%= image_tag 'img_front02.jpg' %></div>
+      <div class="swiper-slide"><%= image_tag 'img_front03.png' %></div>
+      ...
     </div>
     <!-- If we need pagination -->
     <div class="swiper-pagination"></div>
@@ -23,46 +23,81 @@
 
     <!-- If we need scrollbar -->
     <div class="swiper-scrollbar"></div>
-</div>
+  </div>
+
+  <!-- flash message -->
+  <%= render 'partial/flash_message' %>
 
   <!-- total -->
-  <p class="total_count">累計本棚登録数<span class="total_count__number">0</span>件</p>
+  <p class="total_count">
+    累計本棚登録数<span class="total_count__number"><%= @total_count %></span>件
+  </p>
 
   <!-- about -->
   <section class="about-section wrap">
     <h2 class="about-section__heading font_bold">パイログとは</h2>
-    <p class="about-section__text font_bold">パイログは、<span class="about-section__marker">本の感想や評価</span>をチェックしたり、<span class="about-section__marker">webやアプリで本棚</span>をかんたんに作成し、<br><span class="about-section__marker">感想やレビュー</span>を書いたり、<span class="about-section__marker">読書の管理・記録</span>をすることができます。</p>
+    <p class="about-section__text font_bold">
+      パイログは、<span class="about-section__marker">本の感想や評価</span
+      >をチェックしたり、<span class="about-section__marker"
+        >webやアプリで本棚</span
+      >をかんたんに作成し、<br /><span class="about-section__marker"
+        >感想やレビュー</span
+      >を書いたり、<span class="about-section__marker">読書の管理・記録</span
+      >をすることができます。
+    </p>
     <div class="about-section__flex-wrap flex">
       <div class="about-section__flex-item">
-        <figure class="about-section__flex-image"><%= image_tag 'ico_front01.png' %></figure>
+        <figure class="about-section__flex-image">
+          <%= image_tag 'ico_front01.png' %>
+        </figure>
         <p class="about-section__flex-title">本棚</p>
-        <p class="about-section__flex-text">自分のお気に入りの本をウェブ上の本棚に登録できます。本棚のデザインを自分好みに設定できます。</p>
+        <p class="about-section__flex-text">
+          自分のお気に入りの本をウェブ上の本棚に登録できます。本棚のデザインを自分好みに設定できます。
+        </p>
       </div>
       <div class="about-section__flex-item">
-        <figure class="about-section__flex-image"><%= image_tag 'ico_front02.png' %></figure>
-        <p class="about-section__flex-title">充実した<br>感想・レビュー</p>
-        <p class="about-section__flex-text">たくさんいる読書家さん達の、素敵な感想・レビューを見ることができます！とても参考になります。</p>
+        <figure class="about-section__flex-image">
+          <%= image_tag 'ico_front02.png' %>
+        </figure>
+        <p class="about-section__flex-title">充実した<br />感想・レビュー</p>
+        <p class="about-section__flex-text">
+          たくさんいる読書家さん達の、素敵な感想・レビューを見ることができます！とても参考になります。
+        </p>
       </div>
       <div class="about-section__flex-item">
-        <figure class="about-section__flex-image"><%= image_tag 'ico_front03.png' %></figure>
+        <figure class="about-section__flex-image">
+          <%= image_tag 'ico_front03.png' %>
+        </figure>
         <p class="about-section__flex-title">新刊情報</p>
-        <p class="about-section__flex-text">これから発売される最新の本、文庫、新書、漫画の新刊情報をチェックできます。</p>
+        <p class="about-section__flex-text">
+          これから発売される最新の本、文庫、新書、漫画の新刊情報をチェックできます。
+        </p>
       </div>
       <div class="about-section__flex-item">
-        <figure class="about-section__flex-image"><%= image_tag 'ico_front04.png' %></figure>
+        <figure class="about-section__flex-image">
+          <%= image_tag 'ico_front04.png' %>
+        </figure>
         <p class="about-section__flex-title">読書管理</p>
-        <p class="about-section__flex-text">自分の読書状況を設定して、本棚登録することができます。読書メモ、読書グラフ、読書目標機能もあります。</p>
+        <p class="about-section__flex-text">
+          自分の読書状況を設定して、本棚登録することができます。読書メモ、読書グラフ、読書目標機能もあります。
+        </p>
       </div>
       <div class="about-section__flex-item">
-        <figure class="about-section__flex-image"><%= image_tag 'ico_front05.png' %></figure>
+        <figure class="about-section__flex-image">
+          <%= image_tag 'ico_front05.png' %>
+        </figure>
         <p class="about-section__flex-title">タイムライン</p>
-        <p class="about-section__flex-text">自分やお友達のアクティビティを確認できます！</p>
+        <p class="about-section__flex-text">
+          自分やお友達のアクティビティを確認できます！
+        </p>
       </div>
     </div>
-    <div class="about-section__link font_bold">パイログについて<span class="about-section__arrow-icon"></span></div>
+    <div class="about-section__link font_bold">
+      パイログについて<span class="about-section__arrow-icon"></span>
+    </div>
   </section>
 
-  <hr class="section_separation">
+  <hr class="section_separation" />
 
   <!-- pickup -->
   <section class="pickup-section wrap">

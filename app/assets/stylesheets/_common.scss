@@ -1,59 +1,64 @@
 /* variable */
-$main_color: #4EA6CC;  //サイトメインカラー
-$main_color_thin: #8AD8FF; // サイトメインカラー薄目
+$main_color: #4ea6cc; //サイトメインカラー
+$main_color_thin: #8ad8ff; // サイトメインカラー薄目
 
 /* reset style */
-*{
+* {
   box-sizing: border-box;
 }
-body, html{
+body,
+html {
   margin: 0;
   font-size: 62.5%;
+  overflow-x: hidden;
 }
-ul{
+ul {
   list-style: none;
   padding-left: 0;
   margin: 0;
 }
-h1, h2, h3{
+h1,
+h2,
+h3 {
   margin: 0;
 }
-a{
+a {
   text-decoration: none;
   color: #333;
 }
 
-
 /* common class */
-.flex{
+.flex {
   display: flex;
 }
-.wrap{
+.wrap {
   padding: 20px 10px;
 }
-.font_bold{
+.font_bold {
   font-weight: bold;
 }
-.section_heading{
+.section_heading {
   font-size: 2.4rem;
   font-weight: bold;
   color: #333;
   width: fit-content;
 }
-.section_separation{
+.section_separation {
   border-top: 1px solid #8c8b8b;
 }
-.notice_message{
+.notice_message {
   background-color: #b6e355;
   color: #fff;
   text-align: center;
   font-size: 1.6rem;
   padding: 10px;
+  margin-top: 0;
 }
-.alert_message{
+.alert_message {
   background-color: #e38055;
   color: #fff;
   text-align: center;
   font-size: 1.6rem;
   padding: 10px;
+  margin-top: 0;
 }
